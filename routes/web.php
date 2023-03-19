@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); //dashboard 
 });
+
+//manage user
+// Route::get('/users', function () { //users adalah route
+//     return "list users"; //page yang akan list kan users
+// });
+
+//Manage user
+Route::get('/users',
+[UserController::class, 'index'
+])->name('users'); 
+
+//UserController tempat simpan fx Index. Index adalah fx untuk simpan list name
+
 
 Route::middleware([
     'auth:sanctum',
