@@ -16,9 +16,16 @@
                         {{ __('Dashboard') }} 
                     </x-nav-link>
 
-
-                    <x-nav-link href="{{ route('users') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
                         {{ __('Manage Users') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('blogs') }}" :active="request()->routeIs('blogs')">
+                        {{ __('Manage Blog') }}
+                    </x-nav-link>
+
+                    <x-nav-link href="{{ route('blogs.create') }}" :active="request()->routeIs('blogs.create')">
+                        {{ __('Create Blogs') }}
                     </x-nav-link>
 
                 </div>
